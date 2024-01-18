@@ -1,3 +1,5 @@
+
+
 local Stone = {img = love.graphics.newImage("assets/stone.png")}
 Stone.__index = Stone
 

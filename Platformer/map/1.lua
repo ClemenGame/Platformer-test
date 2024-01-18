@@ -1,8 +1,7 @@
 return {
-  version = "1.10",
+  version = "1.4",
   luaversion = "5.1",
-  tiledversion = "1.10.2",
-  class = "",
+  tiledversion = "1.4.2",
   orientation = "orthogonal",
   renderorder = "right-down",
   width = 90,
@@ -16,7 +15,6 @@ return {
     {
       name = "tiles",
       firstgid = 1,
-      class = "",
       tilewidth = 16,
       tileheight = 16,
       spacing = 0,
@@ -26,8 +24,6 @@ return {
       imagewidth = 224,
       imageheight = 64,
       objectalignment = "unspecified",
-      tilerendersize = "tile",
-      fillmode = "stretch",
       tileoffset = {
         x = 0,
         y = 0
@@ -38,7 +34,7 @@ return {
         height = 16
       },
       properties = {},
-      wangsets = {},
+      terrains = {},
       tilecount = 56,
       tiles = {}
     }
@@ -52,13 +48,10 @@ return {
       height = 23,
       id = 1,
       name = "ground",
-      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
       properties = {},
       encoding = "lua",
       data = {
@@ -95,13 +88,10 @@ return {
       height = 23,
       id = 3,
       name = "grass",
-      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
       properties = {},
       encoding = "lua",
       data = {
@@ -135,13 +125,10 @@ return {
       draworder = "topdown",
       id = 8,
       name = "entity",
-      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
       properties = {},
       objects = {
         {
@@ -201,8 +188,8 @@ return {
           name = "Stone",
           type = "stone",
           shape = "rectangle",
-          x = 201.491,
-          y = 132.537,
+          x = 325.491,
+          y = 104.537,
           width = 34,
           height = 34,
           rotation = 0,
@@ -255,13 +242,10 @@ return {
       draworder = "topdown",
       id = 5,
       name = "solid",
-      class = "",
       visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      parallaxx = 1,
-      parallaxy = 1,
       properties = {},
       objects = {
         {

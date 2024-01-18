@@ -6,14 +6,12 @@ local Spike = require("spike")
 local Stone = require("stone")
 local Enemy = require("enemy")
 local Player = require("player")
+local State = require("state")
 
 function Map:load()
    self.currentLevel = 1
    World = love.physics.newWorld(0,2000)
    World:setCallbacks(beginContact, endContact)
-   self.currentState = 1
-   Comp = love.graphics.newImage("assets/state/"..self.currentState..".png")
-   self.stateIsThere = false
 
    self:init()
 end
@@ -33,6 +31,14 @@ function Map:init()
    self:spawnEntities()
 end
 
+function Map:next()
+   self:clean()
+   self.currentLevel = self.currentLevel + 1
+   self:init()
+   Player:resetPosition()
+   State:setState("test")
+end
+
 function Map:clean()
    self.level:box2d_removeLayer("solid")
    Coin.removeAll()
@@ -41,30 +47,10 @@ function Map:clean()
    Spike.removeAll()
 end
 
-function Map:nextLevel()
-   self.currentState = self.currentState + 1
-   self:clean()
-   self.currentLevel = self.currentLevel + 1
-   self:init()
-   Player:resetPosition()
-   self.stateIsThere = false
-end
-
-function Map:nextState()
-    love.graphics.draw(Comp)
-    self.stateIsThere = true
-end
-
-function Map:updateLevel()
+function Map:update()
    if Player.x > MapWidth - 16 then
-      self:nextState()
+      self:next()
    end
-end
-
-function Map:updateState(key)
-    if key == "Return" and self.stateIsThere == true then
-      self.nextLevel()
-    end
 end
 
 function Map:spawnEntities()
