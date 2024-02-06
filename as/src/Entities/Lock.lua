@@ -4,7 +4,8 @@ ActiveLocks = {}
 
 function Lock:init(x, y)
 
-  self.sound = love.audio.newSource('assets/sounds/Lock.wav', 'static')
+  -- self.animation = newAnimation(love.graphics.newImage("assets/images/jakoin_spin.png"), 16, 16, 2)
+  -- self.sound = love.audio.newSource('assets/sounds/Lock.wav', 'static')
 
   self.x = x
   self.y = y
@@ -32,6 +33,7 @@ end
 
 function Lock:update(dt)
   self.checkRemove()
+  -- updateAnimation(self.animation, dt)
 end
 
 
@@ -43,6 +45,7 @@ end
 
 function Lock:render()
   love.graphics.draw(self.image, self.x - self.width/2, self.y - self.height/2, 0, self.scale, self.scale)
+  --renderAnimation(self.animation, self.x, self.y, 1)
 end
 
 function Lock:renderAll()
